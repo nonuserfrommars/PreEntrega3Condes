@@ -36,7 +36,7 @@ if(repeat){
     img : productos.img,
     nombre : productos.nombre,
     precio : productos.precio,
-    cantidad :productos.cantidad,
+    cantidad : productos.cantidad,
   });
   console.log(carrito);
   console.log(carrito.lenght);
@@ -51,10 +51,10 @@ const saveLocal = () => {
 };
 
 
-let seleccion = prompt("Hola! Bienvenid@ a Market Shop. ¿Quiere comprar algun producto?")
+let seleccion = prompt("Hola! Bienvenid@ a Baking Shop. ¿Quiere comprar algun producto?");
 while(seleccion != "si" && seleccion !="no"){
-  alert("por favor ingresar si o no")
-  seleccion = prompt("¿Quiere comprar algun producto? si o no")
+  alert("por favor ingresar si o no");
+  seleccion = prompt("¿Quiere comprar algun producto? si o no");
 }
 
 if(seleccion == "si"){
@@ -62,11 +62,11 @@ if(seleccion == "si"){
   let todoslosProductos = productos.map((producto) => producto.nombre + "" + producto.precio + "$");
   alert(todoslosProductos.join("-"));
 }else if (seleccion == "no"){
-alert("Gracias por visitar, hasta luego!")
+alert("Gracias por visitar, hasta luego!");
 }
 
 while(seleccion != "no"){
-  let producto = prompt("Agrega un producto al carrito")
+  let producto = prompt("Agrega un producto al carrito");
   let precio = 0 
 
   if(producto == "harina" || producto == "leche" || producto == "azucar" || producto == "manteca"
@@ -109,23 +109,23 @@ while(seleccion != "no"){
         default:
           break;
     }
-  let unidades = parseInt(prompt("¿Cuantas unidades quiere comprar?"))
+  let unidades = parseInt(prompt("¿Cuantas unidades quiere comprar?"));
 
   carrito.push({producto, unidades, precio})
   } else{
-    alert("No tenemos ese producto")
+    alert("No tenemos ese producto");
   }
-  seleccion = prompt("¿Desea seguir comprando?")
+  seleccion = prompt("¿Desea seguir comprando?");
   while(seleccion === "no"){
     alert("Gracias por la compra, a continuacion el total a pagar")
   carrito.forEach((carritoFinal) => {
   console.log(`producto: ${carritoFinal.producto}, unidades: ${carritoFinal.unidades},
-  total a pagar por producto ${carritoFinal.unidades * carritoFinal.precio}`)
-  })
+  total a pagar por producto ${carritoFinal.unidades * carritoFinal.precio}`);
+  });
   break;
 }
 }
 
-const total = carrito.reduce((acc, el) => acc + el.precio * el.unidades, 0)
+const total = carrito.reduce((acc, el) => acc + el.precio * el.unidades, 0);
 console.log(`El total a pagar es: ${total}`);
 alert(`El total a pagar es: $${total} ¡Gracias por visitarnos! Saludos`);
