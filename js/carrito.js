@@ -1,58 +1,58 @@
 
 const pintarCarrito = () => {
-const modalHeader= document.createElement("div");
-
   modalContainer.innerHTML="";
   modalContainer.style.display ="flex";
+  const modalHeader= document.createElement("div");
   modalHeader.className = "modal-header";
   modalHeader.innerHTML = ` <h1 class="modal-header-title">Carrito.</h1> `;
   modalContainer.append(modalHeader);
 
-  const modalButton = document.createElement("h1");
-  modalButton.innerText = "x";
-  modalButton.className = "modal-header-button";
+  const modalbutton = document.createElement("h1");
+  modalbutton.innerText = "x";
+  modalbutton.className = "modal-header-button";
 
-  modalButton.addEventListener("click", () =>{
+  modalbutton.addEventListener("click", () => {
     modalContainer.style.display = "none";
   });
 
-  modalHeader.append(modalButton);
+  modalHeader.append(modalbutton);
 
-carrito.forEach((productos) => {
-  let carritoContent = document.createElement("div");
-    carritoContent.className = "modal-content";
-    carritoContent.innerHTML = `<img src="${productos.img}">
-    <h3>${productos.nombre}</h3>
-    <p>${productos.precio} $</p>
-    <span class= "restar"> - </span>
-    <p>Cantidad: ${productos.cantidad}</p>
-    <span class="sumar"> + </span>
-    <p> Total : ${productos.cantidad * productos.precio}</p>
-    <span class="delete-product"> ❌ </span>
-  `;
-  modalContainer.append(carritoContent);
+  carrito.forEach((productos) => {
+    let cantidadCarrito = document.createElement("div");
+      cantidadCarrito.className = "modal-content";
+      cantidadCarrito.innerHTML = `<img src="${productos.img}">
+      <h3>${productos.nombre}</h3>
+      <p>${productos.precio} $</p>
+      <span class= "restar"> - </span>
+      <p>Cantidad: ${productos.cantidad}</p>
+      <span class = "sumar" > + </span>
+      <p> Total : ${productos.cantidad * productos.precio}</p>
+      <span class = "delete-product" > ❌ </span>
+    `;
+  modalContainer.append(cantidadCarrito);
 
-  let restar = carritoContent.querySelector(".restar");
+    let restar = cantidadCarrito.querySelector(".restar");
 
-  restar.addEventListener("click", () => {
-    if (productos.cantidad!== 1){
-      productos.cantidad --;
-    }
+    restar.addEventListener("click", () => {
+      if (productos.cantidad !== 1){
+        productos.cantidad --;
+      }
     saveLocal();
     pintarCarrito();
   });
 
-  let sumar = carritoContent.querySelector(".sumar");
+    let sumar = cantidadCarrito.querySelector(".sumar");
+      sumar.addEventListener("click", () => {
+      productos.cantidad ++;
+      saveLocal();
+      pintarCarrito();
+  }); 
 
-  sumar.addEventListener("click",() => {
-    productos.cantidad ++;
-    saveLocal();
-    pintarCarrito();
-  });
-
-let eliminar = carritoContent.querySelector("delete-product");
-eliminar.addEventListener("click", ()=> {
+let eliminar = cantidadCarrito.querySelector(".delete-product");
+eliminar.addEventListener("click", () => {
   eliminarProducto(productos.id);
+  saveLocal();
+  pintarCarrito();
 });
 
   //let eliminar = document.createElement("span");
@@ -66,7 +66,7 @@ const total =  carrito.reduce((acc, el) => acc + el.precio * el.cantidad, 0);
 
 const totalCompra = document.createElement("div");
 totalCompra.className = "total-content";
-totalCompra.innerHTML = ` total a pagar : ${total} $`;
+totalCompra.innerHTML = ` Total a pagar : ${total} $`;
 modalContainer.append(totalCompra);
 };
 
@@ -77,10 +77,10 @@ const eliminarProducto = (id) => {
   
   carrito = carrito.filter((carritoId) => {
   return carritoId !== foundId;
-});
-carritoCounter();
-saveLocal();
-pintarCarrito();
+  });
+  pintarCarrito();
+  carritoCounter();
+  saveLocal();
 };
 
 const carritoCounter = () => {
@@ -89,7 +89,7 @@ const carritoCounter = () => {
 
 const carritoLength = carrito.length;
 
-localStorage.setItem("carritoLength", JSON.stringify());
+localStorage.setItem("carritoLength", JSON.stringify(carritoLength));
 
 cantidadCarrito.innerText = JSON.parse(localStorage.getItem("carritoLength"));
 };

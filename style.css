@@ -1,8 +1,7 @@
 
 body{
   margin:0;
-  font-family: 'Poppins', sans-serif;
-  font-family: 'Source Code Pro', monospace;  
+  font-family: 'Varela Round', sans-serif; 
 }
 
 .nav-container {
@@ -20,17 +19,19 @@ body{
 .navbar-logo{
   justify-self: start;
   margin-left: 20px;
-  color:#fff;
+  color:rgb(234, 234, 234);
   margin-top:4vh;
   cursor:pointer;
 }
-
+.navbar-logo:hover{
+  color:greenyellow;
+  font-weight: bolder;
+}
 .ver-carrito{
   font-size:25px;
   margin-right:20px;
   margin-top:3.5vh;
   cursor:pointer;
-
 }
 
 .banner{
@@ -45,7 +46,7 @@ body{
 }
 .banner h1{
   margin:0;
-  color:white;
+  color:rgb(234, 234, 234);
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
   font-size: 65px;
   font-weight: bolder;
@@ -81,16 +82,16 @@ body{
   height:250px;
 }
 
-.precio{
+.precio {
   color:grey;
-  font-size: 22px;
+  font-size: 20px;
 }
 
 .card button{
   border:none;
   outline:0;
   padding:12px;
-  color:white;
+  color:rgb(234, 234, 234);
   background-color:#000;
   text-align:center;
   cursor:pointer;
@@ -100,27 +101,35 @@ body{
   
 .card button:hover{
   opacity: 0.8;
+  color:greenyellow;
 }
 .delete-product{
     cursor:pointer;
 }
+.delete-product:hover{
+  font-size:13px;
+}
 .cantidad-carrito {
     background-color:green;
-    color:white;
+    color:rgb(234, 234, 234);
     border-radius:50%;
-    font-size:12px;
+    font-size:10px;
     padding:4px;
     top:37px;
     right:14px;
     position: absolute;
     display:none;
 }
+.cantidad-carrito:hover{
+  background-color:greenyellow;
+  color:rgb(17, 17, 17);
+}
 
 .modal-container{
   width:80%;
   margin:0 10%;
   max-height:88vh;
-  color:#fff;
+  color:rgb(234, 234, 234);
   background-color:#121212;
   display:flex;
   flex-direction:column;
@@ -138,16 +147,22 @@ body{
 .modal-header{
   display:flex;
   justify-content:space-around;
-  background-color:#0a0898;
-  color:#fff;
+  background-color:#08981b;
+  color:rgb(234, 234, 234);
   width:100%;
 }
 
 .modal-header-title {
   justify-self:start;
+  text-transform: lowercase;
 }
 .modal-header-button{
   cursor:pointer;
+  font-weight: bolder;
+  text-transform: uppercase;
+}
+.modal-header-button:hover{
+color:red;
 }
 .modal-container > .modal-content {
   display:flex;
@@ -164,8 +179,19 @@ body{
 }
 
 .total-content {
-  font-size: 25px;
+  font-size: 23px;
   padding:20px;
   text-align:center;
   padding-top:20px;
+}
+.restar:hover{
+  color:#08981b;
+  cursor: pointer;
+  font-weight: bolder;
+}
+
+.sumar:hover{
+  color:#08981b;
+  cursor:pointer;
+  font-weight: bolder;
 }
