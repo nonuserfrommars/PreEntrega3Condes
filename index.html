@@ -16,25 +16,92 @@
     <div class="nav-container">
       <nav class="navbar">
         <h1 class="navbar-logo">BAKING shop.</h1>
+        <a href="recetas.html">Recetas</a>
         <h1 class ="ver-carrito" id="verCarrito">🛒
           <span id ="cantidadCarrito"
           class="cantidad-carrito"></span></h1>
       </nav>
     </div>
-
     <div class="banner" >
       <div class="banner-container">
         <h2>VENTA DE INGREDIENTES  </h2>
         <p>REPOSTERIA Y PANADERIA</p>
       </div>
     </div>
-
     <div id="contenidoShop" class="contenido-shop">
     </div>
     
     <div id ="modal-container" class="modal-container">
     </div>
     
+
+
+
+
+
+
+
+
+
+    <div class="back"></div>
+    <div class=" form">
+      <ul class="tab-group">
+        <li class="tab active"><a href="#signup">Registrarse </a></li>
+        <li class="tab"><a href= "login">Entrar</a></li>
+      </ul>
+      <div class="tab-content">
+        <div id="signup">
+          <h4>Suscribite para descuentos y mas!</h4>
+          <form action="/" method="post">
+            <div class="top-row">
+              <div class="field-wrap">
+                <label>Nombre<span class="req">*</span></label>
+                <input type="text" required autocomplete="off"/>
+              </div>
+              <div class="field-wrap">
+                <label>Apellido <span class="req">*</span></label>
+                <input type="text" required autocomplete="off" />
+              </div>
+            </div>
+            <div class="field-wrap">
+              <label>Email<span class="req">*</span></label>
+              <input type="email" required autocomplete="off"/>
+            </div>
+            <div class="field-wrap">
+              <label>
+                Contraseña<span class="req">*</span>
+              </label>
+              <input type="password" required autocomplete="off" />
+            </div>
+            <button type="submit" class="button button-block"/>Suscribirme</button>
+          </form>
+        </div>
+        <div id="login">
+          <h1>Bienvenid@!</h1>
+          <form action="/" method="post">
+            <div class="field-wrap">
+              <label>
+                Email<span class="req">*</span>
+              </label>
+              <input type="email"required autocomplete="off"/>
+            </div>
+            
+            <div class="field-wrap">
+              <label>
+                Contraseña<span class="req">*</span>
+              </label>
+              <input type="password"required autocomplete="off"/>
+            </div>
+            
+            <p class="forgot"><a href="#">Olvidaste tu contraseña?</a></p>
+            
+            <button class="button button-block"/>Ingresar</button>
+            
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
     <script src="./js/productos.js"></script>
     <script src="./js/app.js"></script>
     <script src="./js/carrito.js"></script>
